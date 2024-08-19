@@ -1,10 +1,1 @@
-<!--
-<div class="row">
-    <% @prospects.each do |pr| %>
-        <div class="col-md-12 col-lg-6 mb-4">
-            <%= render Prospects::ShowComponent.new(pr) %>
-        </div>
-    <% end %>
-</div>>
--->
 <%= render Prospects::ShowTable.new(@prospects) %>

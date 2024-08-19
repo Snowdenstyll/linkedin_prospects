@@ -17,9 +17,6 @@ module Prospects
             status: prospect.get_status
           }
         end
-        # name: @prospect.name,
-        # company_name: @prospect.company_name,
-        # linkedin_url: @prospect.linkedin_url,
       }
     end
   end

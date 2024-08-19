@@ -4,14 +4,13 @@ import Table from 'react-bootstrap/Table';
 const ProspectTable = ({ prospects }) => {
     var headers = Object.keys(prospects[0]).filter((key) => {
         return key !== 'created_at' && key !== 'updated_at';
-        }).map((key) => (
+    }).map((key) => (
           <th key={key}>
-            {key}
+            {key.replace(/_/g, ' ').toUpperCase()}
           </th>
         ));
 
     return (
-        //prospects.length === 0 ? <p>No data</p> : prospects.length
         <Table striped bordered hover>
         <thead>
             <tr>
@@ -25,7 +24,9 @@ const ProspectTable = ({ prospects }) => {
             return key !== 'created_at' && key !== 'updated_at';
             }).map((key) => (
             // Create a table cell for each property name
-                <td key={Math.random()}>{row[key]}</td>
+                <td key={Math.random()}>
+                    {key == "linkedin_url" ? <a href={row[key]} target="_blank" rel="noopener noreferrer">{row[key]}</a> : row[key]}
+                </td>
             ))}
             </tr>
         ))}
