@@ -1,9 +1,0 @@
-<%= render ReactComponent.new("Header") %>
-
-<div class="row">
-    <div class="col-md-12">
-        <% @prospects.each do |pr| %>
-            <%= render Prospects::ShowComponent.new(pr) %>
-        <% end %>
-    </div>
-</div>

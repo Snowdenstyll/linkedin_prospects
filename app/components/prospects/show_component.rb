@@ -9,9 +9,11 @@ module Prospects
 
     def props
       {
-        name: @prospect.name,
-        company_name: @prospect.company_name,
-        linkedin_url: @prospect.linkedin_url
+        prospect: @prospect,
+        prospect_status: @prospect.get_status
+        # name: @prospect.name,
+        # company_name: @prospect.company_name,
+        # linkedin_url: @prospect.linkedin_url,
       }
     end
   end

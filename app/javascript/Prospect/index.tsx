@@ -1,16 +1,21 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
-import { Link } from "react-router-dom";
+import Button from 'react-bootstrap/Button';
 
-const Prospect = ({ name, company_name, linkedin_url }: { name: string; company_name: string; linkedin_url: string }) => {
+const Prospect = ({ prospect, prospect_status }) => {
+
   return (
-    <Card style={{ width: '50%' }}>
+    <Card>
       <Card.Body>
-        <Card.Title>{name}</Card.Title>
-        <Card.Text>{company_name}</Card.Text>
+        <Card.Title>{prospect.name}</Card.Title>
+        <Card.Text>Company Name: {prospect.company_name}</Card.Text>
+        <Card.Title>Status: {prospect_status}</Card.Title>
         <Card.Text>
-          <a href={linkedin_url} target="_blank" rel="noopener noreferrer">{linkedin_url}</a>
+          <a href={prospect.linkedin_url} target="_blank" rel="noopener noreferrer">{prospect.linkedin_url}</a>
         </Card.Text>
+        <Button variant="primary">
+          <a className="text-white" href={`/prospects/${prospect.id}`}>View</a>
+        </Button>
       </Card.Body>
     </Card>
   );

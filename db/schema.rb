@@ -10,7 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2024_08_16_190532) do
+ActiveRecord::Schema[7.2].define(version: 2024_08_17_172519) do
+  create_table "prospect_statuses", force: :cascade do |t|
+    t.integer "prospect_id", null: false
+    t.integer "status", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["prospect_id"], name: "index_prospect_statuses_on_prospect_id"
+  end
+
   create_table "prospects", force: :cascade do |t|
     t.string "name"
     t.string "company_name"
@@ -18,4 +26,6 @@ ActiveRecord::Schema[7.2].define(version: 2024_08_16_190532) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
+
+  add_foreign_key "prospect_statuses", "prospects"
 end
