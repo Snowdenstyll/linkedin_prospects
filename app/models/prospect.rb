@@ -7,10 +7,9 @@ class Prospect < ApplicationRecord
 
   def get_status
     if self.prospect_status.nil?
-      @status_id = 0 # or handle the situation in a specific way
+      ProspectStatus.statuses.key(0)
     else
-      @status_id = self.prospect_status
+      self.prospect_status.status
     end
-    ProspectStatus.statuses.key(@status_id).gsub(/_/, " ").capitalize
   end
 end

@@ -16,7 +16,8 @@ module Prospects
             linkedin_url: prospect.linkedin_url,
             status: prospect.get_status
           }
-        end
+        end,
+        all_statuses: ProspectStatus.all_status
       }
     end
   end
