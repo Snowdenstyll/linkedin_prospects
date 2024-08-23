@@ -11,11 +11,11 @@
 require 'csv'
 
 
-# csv_text = File.read(Rails.root.join('lib', 'seeds', 'linkedin_cio_data.csv'))
-# csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
-# csv.each do |row|
-#  Prospect.find_or_create_by!(name: row['Name'], company_name: row['Company'], linkedin_url: row['Url'])
-# end
+csv_text = File.read(Rails.root.join('lib', 'seeds', 'linkedin_cio_data.csv'))
+csv = CSV.parse(csv_text, headers: true, encoding: 'ISO-8859-1')
+csv.each do |row|
+Prospect.find_or_create_by!(name: row['Name'], company_name: row['Company'], linkedin_url: row['Url'])
+end
 
 
 @status_arr = [ "new_prospect", "qualified", "converted", "lost", "unqualified", "follow_up", "referral", "lead", "contacted", "meeting", "proposal", "negotiation", "closed_won", "closed_lost", "dead", "pending" ]
