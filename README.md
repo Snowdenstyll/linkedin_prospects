@@ -1,24 +1,38 @@
-# README
+# Ruby on Rails Getting Started Guide
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Overview
+Basic Ruby on Rails application. Showing a list of Linkedin users with the title CIO.</br>
+NOT TO BE RUN IN PRODUCTION
 
-Things you may want to cover:
+## Run Locally
+Clone the repository:
+```bash
+git clone https://github.com/yourusername/your-repo-name.git
+cd your-repo-name
+```
 
-* Ruby version
+Install dependencies:
+```bash
+bundle install
+```
 
-* System dependencies
+`If you are using Windows, you have to pass the scripts under the bin folder directly to the Ruby interpreter e.g. ruby bin\rails server.`
 
-* Configuration
+Set up the database:
+```bash
+ruby bin/rails db:migrate
+```
 
-* Database creation
+Run the seeder:
+```bash
+ruby bin/rails db:seed
+```
 
-* Database initialization
+Start the server:
+```bash
+ruby bin\rails server
+```
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
+License
