@@ -53,4 +53,4 @@ group :development do
 end
 
 
-gem "view_component", "~> 3.13"
+gem "view_component", "~> 3.17"
